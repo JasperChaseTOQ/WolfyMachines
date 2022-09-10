@@ -1,20 +1,11 @@
 package me.jasperchasetoq.wolfymachines;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
-import jdk.internal.platform.Metrics;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 
 public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
@@ -25,7 +16,6 @@ public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
 
         Config cfg = new Config(this);
 
-        WolfyMachinesItemsSetup.setup(this);
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveDefaultConfig();
         }
@@ -33,8 +23,6 @@ public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
         if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
             new GitHubBuildsUpdater(this, getFile(), "JasperChaseTOQ/WolfyMachines/master").start();
 
-            int pluginId = 16400; // <-- Replace with the id of your plugin!
-            Metrics metrics = new Metrics(this, pluginId);
         }
     }
     @Override

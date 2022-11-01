@@ -3,6 +3,8 @@ package me.jasperchasetoq.wolfymachines;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import me.jasperchasetoq.wolfymachines.implementation.setup.WolfyMachinesItemSetup;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
@@ -15,7 +17,7 @@ public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
 
         Config cfg = new Config(this);
-
+        WolfyMachinesItemSetup.setup(this);
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveDefaultConfig();
         }
@@ -23,11 +25,12 @@ public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
         if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
             new GitHubBuildsUpdater(this, getFile(), "JasperChaseTOQ/WolfyMachines/master").start();
 
+            int pluginId = 16400;
+            Metrics metrics = new Metrics(this, pluginId);
         }
     }
     @Override
     public void onDisable() {
-        // Logic for disabling the plugin...
     }
     @Override
     public String getBugTrackerURL() {
@@ -48,8 +51,5 @@ public class WolfyMachines extends JavaPlugin implements SlimefunAddon {
 
     public static WolfyMachines getInstance() {
         return instance;
-    }
-    public static String getVersion() {
-        return instance.getDescription().getVersion();
     }
 }

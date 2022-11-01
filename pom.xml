@@ -67,7 +67,7 @@
                         </relocation>
                         <relocation>
                             <pattern>me.jasperchasetoq.wolfylibrary</pattern>
-                            <shadedPattern>io.github.mooy1.infinityexpansion.infinitylib</shadedPattern>
+                            <shadedPattern>me.jasperchasetoq.wolfymachines.wolfylibrary</shadedPattern>
                         </relocation>
                     </relocations>
 

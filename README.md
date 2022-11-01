@@ -1,1 +1,2 @@
 Wolfy Machines is an addon that im making that will host any machines and stuff that i want to try making that dont suit any of my pre existing addons or dont have enough content developed to have their own addon.
+this addon is not intended for most servers and only heavy slimefun servers as some items may be removed and made into their own addons eventually

@@ -1,8 +1,8 @@
 name: WolfyMachines
 author: JasperChaseTOQ
-description: A dev slimefun addon
+description: an addon with a bunch of random stuff that currently does not fit
 main: me.jasperchasetoq.wolfymachines.WolfyMachines
 website: https://github.com/JasperChaseTOQ/WolfyMachines
 version: ${project.version}
-api-version: 1.17
+api-version: 1.19
 depend: [Slimefun]

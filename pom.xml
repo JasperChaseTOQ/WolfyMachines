@@ -65,6 +65,10 @@
                             <pattern>org.bstats</pattern>
                             <shadedPattern>me.jasperchasetoq.wolfymachines.bstats</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>me.jasperchasetoq.wolfylibrary</pattern>
+                            <shadedPattern>io.github.mooy1.infinityexpansion.infinitylib</shadedPattern>
+                        </relocation>
                     </relocations>
 
                     <filters>

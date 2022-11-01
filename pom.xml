@@ -127,7 +127,7 @@
         <dependency>
             <groupId>com.github.JasperChaseTOQ</groupId>
             <artifactId>WolfyLibrary</artifactId>
-            <version>v0.0.1</version>
+            <version>v.0.0.5</version>
         </dependency>
     </dependencies>
 </project>

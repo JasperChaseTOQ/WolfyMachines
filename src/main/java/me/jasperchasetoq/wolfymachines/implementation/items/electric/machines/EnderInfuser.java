@@ -1,6 +1,7 @@
 package me.jasperchasetoq.wolfymachines.implementation.items.electric.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotHopperable;
@@ -24,8 +25,10 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+
 @SuppressWarnings("deprecation")
 public class EnderInfuser extends AContainer implements NotHopperable {
+
 
     //Inventory Menu Slots
     private static final int[] FIRST_INPUT_BORDER = {1, 2, 3, 10, 12, 19, 20, 21};
@@ -61,7 +64,7 @@ public class EnderInfuser extends AContainer implements NotHopperable {
             @Override
             public int[] getSlotsAccessedByItemTransport(DirtyChestMenu menu, ItemTransportFlow flow, ItemStack item) {
                 if (flow == ItemTransportFlow.INSERT) {
-                    if (item == SlimefunItems.MAGIC_LUMP_1) {
+                    if (item.getType() == Material.ENDER_PEARL) {
                         return getFirstInputSlot();
                     } else {
                         return getSecondInputSlot();
@@ -80,7 +83,7 @@ public class EnderInfuser extends AContainer implements NotHopperable {
     }
     @Override
     public String getMachineIdentifier() {
-        return "ENDER_INFUSER";
+        return "ENDER_WM_INFUSER";
     }
 
     @Override

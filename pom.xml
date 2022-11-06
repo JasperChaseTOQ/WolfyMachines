@@ -10,6 +10,7 @@
     <version>UNOFFICIAL</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
@@ -65,6 +66,10 @@
                             <pattern>org.bstats</pattern>
                             <shadedPattern>me.jasperchasetoq.wolfymachines.bstats</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>me.jasperchasetoq.wolfylibrary</pattern>
+                            <shadedPattern>me.jasperchasetoq.wolfymachines.wolfylibrary</shadedPattern>
+                        </relocation>
                     </relocations>
 
                     <filters>
@@ -119,6 +124,11 @@
             <artifactId>bstats-bukkit</artifactId>
             <version>3.0.0</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.JasperChaseTOQ</groupId>
+            <artifactId>WolfyLibrary</artifactId>
+            <version>v.0.0.5</version>
         </dependency>
     </dependencies>
 </project>

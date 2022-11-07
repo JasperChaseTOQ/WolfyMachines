@@ -149,14 +149,14 @@ public class EnderInfuser extends AContainer implements NotHopperable {
         return new BlockBreakHandler(false, false) {
 
             @Override
-            public void onPlayerBreak(BlockBreakEvent e, ItemStack item, List<ItemStack> drops) {
-                Block b = e.getBlock();
-                BlockMenu inv = BlockStorage.getInventory(b);
+            public void onPlayerBreak(BlockBreakEvent blockbreak, ItemStack item, List<ItemStack> drops) {
+                Block machineblock = blockbreak.getBlock();
+                BlockMenu inv = BlockStorage.getInventory(machineblock);
 
                 if (inv != null) {
-                    inv.dropItems(b.getLocation(), getFirstInputSlot());
-                    inv.dropItems(b.getLocation(), getSecondInputSlot());
-                    inv.dropItems(b.getLocation(), getFirstOutputSlot());
+                    inv.dropItems(machineblock.getLocation(), getFirstInputSlot());
+                    inv.dropItems(machineblock.getLocation(), getSecondInputSlot());
+                    inv.dropItems(machineblock.getLocation(), getFirstOutputSlot());
                 }
             }
         };
